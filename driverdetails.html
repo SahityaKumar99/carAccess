@@ -1,0 +1,165 @@
+<!-- File: driverdetails.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2c3e50, #3498db); /* Gradient background colors */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ecf0f1; /* Clouds color */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f8f8f8;
+            color: #333;
+            font-size: 1em;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background-color: #f8f8f8;
+            color: #333;
+            font-size: 1em;
+            resize: none;
+        }
+
+        button {
+            background-color: #2ecc71; /* Emerald color */
+            color: white;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #27ae60; /* Nephritis color */
+        }
+
+        p {
+            margin-top: 20px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        hr {
+            border: 0.5px solid white;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Driver Details</h2>
+
+        <!-- Display driver details received from the car rental form -->
+        <p>Thank you for your booking!</p>
+        <p>Driver details will be provided shortly.</p>
+
+        <hr>
+
+        <!-- Additional features: Form for providing driver details -->
+        <form id="driverDetailsForm">
+            <label for="driverName">Driver's Name:</label>
+            <input type="text" id="driverName" name="driverName" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="specialInstructions">Special Instructions:</label>
+            <textarea id="specialInstructions" name="specialInstructions" rows="4"></textarea>
+
+            <button type="button" onclick="submitDriverDetails()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to fill in predefined driver details
+        function fillPredefinedDriverDetails() {
+            var predefinedDriverDetails = {
+                driverName: "Rahul Sharma",
+                contactNumber: "9876543210",
+                specialInstructions: "No specific instructions"
+            };
+
+            // Fill in the form fields with predefined details
+            document.getElementById("driverName").value = predefinedDriverDetails.driverName;
+            document.getElementById("contactNumber").value = predefinedDriverDetails.contactNumber;
+            document.getElementById("specialInstructions").value = predefinedDriverDetails.specialInstructions;
+        }
+
+        // Function to handle the submission of additional driver details
+        function submitDriverDetails() {
+            var driverName = document.getElementById("driverName").value;
+            var contactNumber = document.getElementById("contactNumber").value;
+            var specialInstructions = document.getElementById("specialInstructions").value;
+
+            // Perform additional validation or send data to the server here
+
+            // Display the submitted driver details
+            var detailsMessage = "Driver Details:\nName: " + driverName + "\nContact Number: " + contactNumber +
+                                 "\nSpecial Instructions:\n" + specialInstructions;
+            alert(detailsMessage);
+        }
+
+        // Call the function to fill in predefined driver details when the page loads
+        fillPredefinedDriverDetails();
+    </script>
+
+</body>
+</html>

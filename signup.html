@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental Booking</title>
+    <title>Sign Up</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #27ae60, #2ecc71); /* Gradient background colors */
+            background: linear-gradient(to right, #3498db, #2980b9); /* Gradient background colors */
             color: white;
             display: flex;
             align-items: center;
@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 600px;
+            max-width: 400px;
             width: 100%;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 30px;
@@ -47,7 +47,7 @@
             font-size: 1.2em;
         }
 
-        input, select {
+        input {
             width: 100%;
             padding: 12px;
             margin-bottom: 16px;
@@ -60,7 +60,7 @@
         }
 
         button {
-            background-color: #3498db; /* Belize Hole color */
+            background-color: #2ecc71; /* Emerald color */
             color: white;
             padding: 12px 15px;
             border: none;
@@ -71,7 +71,7 @@
         }
 
         button:hover {
-            background-color: #2980b9; /* Belize Hole (slightly darker) color */
+            background-color: #27ae60; /* Nephritis color */
         }
 
         p {
@@ -79,46 +79,51 @@
             color: white;
             font-size: 1.2em;
         }
+
+        a {
+            color: #3498db; /* Belize Hole color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #2980b9; /* Belize Hole (slightly darker) color */
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Car Rental Booking Form</h2>
+        <h2>Sign Up</h2>
 
-        <!-- Car rental form -->
-        <form id="carRentalForm">
-            <label for="carType">Car Type:</label>
-            <select id="carType" name="carType" required>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="hatchback">Hatchback</option>
-            </select>
+        <!-- Signup form -->
+        <form id="signupForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
 
-            <label for="pickupDate">Pickup Date:</label>
-            <input type="date" id="pickupDate" name="pickupDate" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
-            <label for="returnDate">Return Date:</label>
-            <input type="date" id="returnDate" name="returnDate" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-            <button type="button" onclick="submitCarRental()">Book Now</button>
+            <button type="button" onclick="submitSignUp()">Sign Up</button>
         </form>
 
-        <p>Need a driver? <a href="driverdetails.html">Add Driver Details</a></p>
+        <p>Already have an account? <a href="login.html">Log In</a></p>
     </div>
 
     <script>
-        function submitCarRental() {
-            // Function to handle car rental form submission
-            var carType = document.getElementById("carType").value;
-            var pickupDate = document.getElementById("pickupDate").value;
-            var returnDate = document.getElementById("returnDate").value;
+        function submitSignUp() {
+            // Function to handle signup form submission
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
 
             // Perform additional validation or send data to the server here
 
             // Display a message or redirect to another page
-            var message = "Car Rental Booking Successful!\nCar Type: " + carType +
-                          "\nPickup Date: " + pickupDate + "\nReturn Date: " + returnDate;
+            var message = "Sign Up Successful!\nName: " + fullName + "\nEmail: " + email;
             alert(message);
         }
     </script>

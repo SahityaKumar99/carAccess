@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('grahame-jenkins-p7tai9P7H-s-unsplash.jpg'); /* Add your home page background image file path here */
+            background-image: url('grahame-jenkins-p7tai9P7H-s-unsplash.jpg');
+            /* Add your home page background image file path here */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -32,21 +34,32 @@
             border: 2px solid white;
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 20px;
+            margin: 20px 10px;
             display: inline-block;
+            transition: background-color 0.3s;
         }
 
         a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+
+        .auth-links {
+            margin-top: 50px;
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>Welcome to Car Access Program</h1>
+    <h1>Welcome to Car Rentals</h1>
     <p>Explore our fleet and book your dream car today!</p>
 
-    <a href="carrental.html">Book Now</a>
+    <div class="auth-links">
+        <a href="carrental.html">Book Now</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+    </div>
 
 </body>
+
 </html>
